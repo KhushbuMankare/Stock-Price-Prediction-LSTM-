@@ -1,0 +1,20 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Price Predictor</title>
+</head>
+<body style="font-family:Arial;text-align:center;margin-top:40px">
+    <h1>📈 Stock Price Prediction (LSTM)</h1>
+    <form method="POST">
+        <label for="ticker">Enter Stock Ticker (e.g., AAPL, MSFT):</label><br>
+        <input type="text" id="ticker" name="ticker" required>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+        <h2>Next Day Predicted Price: ${{ prediction }}</h2>
+        <img src="{{ plot_url }}" alt="Prediction Graph" width="600">
+    {% endif %}
+</body>
+</html>
